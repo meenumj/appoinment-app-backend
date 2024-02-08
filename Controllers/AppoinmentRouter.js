@@ -20,4 +20,10 @@ router.get("/viewappoinments",async(req,res)=>{
 })
 
 
+router.post("/searchappoinments",async(req,res)=>{
+    let input=req.body
+    let data=await appoinmentsModel.find(input)
+    res.json(data)
+})
+
 module.exports=router
